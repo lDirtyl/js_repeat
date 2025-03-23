@@ -83,17 +83,58 @@ console.log(formatMessage("Nunc sed turpis a felis in nunc fringilla", 41)); // 
 
 Доповни код функції таким чином, що:
 
-- Якщо знайдено заборонене слово (spam або sale), то функція повертає буль true
-- Якщо в рядку відсутні заборонені слова, функція повертає буль false
+- Якщо знайдено заборонене слово (`spam` або `sale`), то функція повертає буль
+  `true`
+- Якщо в рядку відсутні заборонені слова, функція повертає буль `false`
 
 ---
 
 Візьми код нижче і встав після оголошення своєї функції для перевірки
-коректності її роботи.  
-У консоль будуть виведені результати її роботи:
+коректності її роботи. У консоль будуть виведені результати її роботи.
 
 ```javascript
-console.log(getElementWidth("50px", "8px", "4px")); // 74
-console.log(getElementWidth("60px", "12px", "8.5px")); // 101
-console.log(getElementWidth("200px", "0px", "0px")); // 200
+console.log(checkForSpam("Latest technology news")); // false
+console.log(checkForSpam("JavaScript weekly newsletter")); // false
+console.log(checkForSpam("Get best sale offers now!")); // true
+console.log(checkForSpam("Amazing SalE, only tonight!")); // true
+console.log(checkForSpam("Trust me, this is not a spam message")); // true
+console.log(checkForSpam("Get rid of sPaM emails. Our book in on sale!")); // true
+console.log(checkForSpam("[SPAM] How to earn fast money?")); // true
+```
+
+### Задача 4. Доставка товару
+
+> ❗ Виконай це завдання у файлі `task-4.js`
+
+Оголоси функцію `getShippingCost(country)`, яка повинна перевіряти можливість
+доставки товару в країну користувача (параметр `country`) і повертати
+повідомлення про результат. Обов'язково використовуй інструкцію `switch`.
+
+Формат рядка, що повертається
+`"Shipping to <country> will cost <price> credits"`, де замість `<country>` і
+<price> необхідно підставити відповідні значення.
+
+Список країн і вартість доставки:
+
+- China — 100 кредитів
+- Chile — 250 кредитів
+- Australia — 170 кредитів
+- Jamaica — 120 кредитів
+
+Зі списку видно, що доставка можлива не скрізь. Якщо зазначена країна відсутня у
+списку, то функція повинна повернути рядок
+`"Sorry, there is no delivery to your country"`.
+
+---
+
+Візьми код нижче і встав після оголошення своєї функції для перевірки
+коректності її роботи. У консоль будуть виведені результати її роботи.
+
+```javascript
+console.log(getShippingCost("Australia")); // "Shipping to Australia will cost 170 credits"
+console.log(getShippingCost("Germany")); // "Sorry, there is no delivery to your country"
+console.log(getShippingCost("China")); // "Shipping to China will cost 100 credits"
+console.log(getShippingCost("Chile")); // "Shipping to Chile will cost 250 credits"
+console.log(getShippingCost("Jamaica")); // "Shipping to Jamaica will cost 120 credits"
+console.log(getShippingCost("Sweden")); // "Sorry, there is no delivery to your country"
 ```
