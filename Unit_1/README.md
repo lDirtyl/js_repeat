@@ -8,4 +8,4 @@
 
 Візьми код нижче і встав після оголошення своєї функції для перевірки коректності її роботи. У консоль будуть виведені результати її роботи.
 
-<pre> <code>```javascript function sayHello() { console.log("Hello, world!"); } ```</code> </pre>
+<code>javascript function sayHello() { console.log("Hello, world!"); } </code>
