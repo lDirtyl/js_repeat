@@ -39,53 +39,52 @@ console.log(makeTransaction(8, 2000, 10000)); // "Insufficient funds!"
 console.log(makeTransaction(10, 500, 5000)); // "You ordered 10 droids worth 5000 credits!"
 ```
 
-### Задача 2. Доставка товару
+### Задача 2. Форматування повідомлення
 
 > ❗ Виконуй це завдання у файлі `task-2.js`
 
-Оголоси функцію `getShippingMessage`, яка очікує три параметри, значення яких
-будуть задаватися під час її виклику:  
-— `country` — перший параметр, рядок, що містить країну доставки  
-— `price` — другий параметр, число, що містить загальну вартість товару  
-— `deliveryFee` — третій параметр, число, що містить вартість доставки товару
+Оголоси функцію `formatMessage(message, maxLength)`, яка приймає рядок (параметр
+`message`) та перевіряє його довжину відповідно до заданої максимальної довжини
+(параметр `maxLength`).
 
 ---
 
-Доповни код функції так, щоб вона повертала рядок з повідомленням про доставку
-товару в країну користувача:  
-`"Shipping to <country> will cost <totalPrice> credits"`, де:  
-— `<country>` — це країна доставки  
-— `<totalPrice>` — це загальна вартість замовлення, що включає вартість товару і
-його доставки
+Доповни код функції таким чином, що:
+
+- Якщо довжина рядка дорівнює або менша за `maxLength`, то функція повертає
+  початковий рядок без змін.
+- Якщо довжина перевищує `maxLength`, то функція обрізає рядок до `maxLength`
+  символів, додає трикрапку `"..."` в кінці та повертає обрізану версію.
 
 ---
 
 Візьми код нижче і встав після оголошення своєї функції для перевірки
-коректності її роботи.  
-У консоль будуть виведені результати її роботи:
+коректності її роботи. У консоль будуть виведені результати її роботи.
 
 ```javascript
-console.log(getShippingMessage("Australia", 120, 50)); // "Shipping to Australia will cost 170 credits"
-console.log(getShippingMessage("Germany", 80, 20)); // "Shipping to Germany will cost 100 credits"
-console.log(getShippingMessage("Sweden", 100, 20)); // "Shipping to Sweden will cost 120 credits"
+console.log(formatMessage("Curabitur ligula sapien", 16)); // "Curabitur ligula..."
+console.log(formatMessage("Curabitur ligula sapien", 23)); // "Curabitur ligula sapien"
+console.log(formatMessage("Vestibulum facilisis purus nec", 20)); // "Vestibulum facilisis..."
+console.log(formatMessage("Vestibulum facilisis purus nec", 30)); // "Vestibulum facilisis purus nec"
+console.log(formatMessage("Nunc sed turpis a felis in nunc fringilla", 15)); // "Nunc sed turpis..."
+console.log(formatMessage("Nunc sed turpis a felis in nunc fringilla", 41)); // "Nunc sed turpis a felis in nunc fringilla"
 ```
 
-### Задача 3. Ширина елемента
+### Задача 3. Перевірка спаму
 
 > ❗ Виконай це завдання у файлі `task-3.js`
 
-Оголоси функцію `getElementWidth`, яка очікує три параметри, значення яких
-будуть задаватися під час її виклику:  
-— `content` — перший параметр, ширина контенту  
-— `padding` — другий параметр, значення горизонтального падінгу для кожної зі
-сторін  
-— `border` — третій параметр, значення товщини бордера для кожної зі сторін  
-Значення всіх параметрів будуть рядками формату `Npx` де **N** — це довільне
-число, ціле або дробове.
+Функція `checkForSpam(message)` приймає рядок (параметр `message`), перевіряє
+його на вміст заборонених слів `spam` і `sale`, і повертає результат перевірки.
+Слова в рядку параметра message можуть бути в довільному регістрі, наприклад
+`SPAM` або `sAlE`.
 
-Доповни код функції так, щоб вона повертала число — загальну ширину елемента.  
-При розрахунку загальної ширини орієнтуйся на те, що значення box-sizing
-дорівнює `border-box`.
+---
+
+Доповни код функції таким чином, що:
+
+- Якщо знайдено заборонене слово (spam або sale), то функція повертає буль true
+- Якщо в рядку відсутні заборонені слова, функція повертає буль false
 
 ---
 
